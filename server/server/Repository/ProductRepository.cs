@@ -34,7 +34,7 @@ namespace server.Repository
             throw new NotImplementedException();
         }
 
-        public bool ProductExist(int id)
+        public bool ProductExists(int id)
         {
             return _context.Products.Any(p => p.ProductId == id);
         }

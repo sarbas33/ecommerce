@@ -10,7 +10,7 @@ namespace server.Interfaces
         Product AddProduct(Product product);
         Product UpdateProduct(Product product);
         Product DeleteProduct(int id);
-        bool ProductExist(int id);
+        bool ProductExists(int id);
         bool Save();
     }
 }

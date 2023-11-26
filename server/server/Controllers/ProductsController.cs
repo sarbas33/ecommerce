@@ -29,9 +29,7 @@ namespace server.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-            if (!_productRepository.ProductExist(id))
+            if (!_productRepository.ProductExists(id))
             {
                 return NotFound();
             }
