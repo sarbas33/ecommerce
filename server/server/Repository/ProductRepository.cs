@@ -26,7 +26,7 @@ namespace server.Repository
 
         public Product GetProduct(int id)
         {
-            throw new NotImplementedException();
+            return _context.Products.Where(p => p.ProductId==id).FirstOrDefault();
         }
 
         public Product GetProductByName(string name)
@@ -36,7 +36,7 @@ namespace server.Repository
 
         public bool ProductExist(int id)
         {
-            throw new NotImplementedException();
+            return _context.Products.Any(p => p.ProductId == id);
         }
 
         public bool Save()

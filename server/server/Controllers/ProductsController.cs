@@ -18,16 +18,24 @@ namespace server.Controllers
         }
         // GET: api/<ProductsController>
         [HttpGet]
-        public IEnumerable<Product> Get()
+        public IActionResult Get()
         {
-            return _productRepository.GetProducts();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Ok(_productRepository.GetProducts());
         }
 
         // GET api/<ProductsController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            if (!_productRepository.ProductExist(id))
+            {
+                return NotFound();
+            }
+            return Ok(_productRepository.GetProduct(id));
         }
 
         // POST api/<ProductsController>
