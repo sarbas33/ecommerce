@@ -14,12 +14,12 @@ namespace server.Repository
         {
             return _context.Products.ToList();
         }
-        public Product AddProduct(Product product)
+        public bool AddProduct(Product product)
         {
             throw new NotImplementedException();
         }
 
-        public Product DeleteProduct(int id)
+        public bool DeleteProduct(int id)
         {
             throw new NotImplementedException();
         }
@@ -44,7 +44,7 @@ namespace server.Repository
             throw new NotImplementedException();
         }
 
-        public Product UpdateProduct(Product product)
+        public bool UpdateProduct(Product product)
         {
             throw new NotImplementedException();
         }
